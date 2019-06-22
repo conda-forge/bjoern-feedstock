@@ -1,5 +1,5 @@
 {% set name = "bjoern" %}
-{% set version = "3.0.0" %}
+{% set version = "3.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 2e4461c7306c4f5def03223dce3b0f16ad26bc1718240e59a5e5472c2701027a
+  sha256: b6dae5ffb17f0120213ca2f4b6a5d56672d09d132e997a3482a83a93bfab55aa
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  script: "{{ PYTHON }} -m pip install . -vv"
   skip: True  # [win]
 
 requirements:
@@ -20,7 +20,6 @@ requirements:
   host:
     - python
     - pip
-    - setuptools
     - libev
   run:
     - python
