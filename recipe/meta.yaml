@@ -1,5 +1,5 @@
 {% set name = "bjoern" %}
-{% set version = "3.1.0" %}
+{% set version = "3.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 01f3b601cf0ab0a9c7cb9c8f944ab7c738baaa6043ca82db20e9bd7a9be5767b
+  sha256: 7bd36386f3562479090455e17f20e52ef52e7edcc4bf07d104914aa9019f5cdd
 
 build:
-  number: 3
-  script: "{{ PYTHON }} -m pip install . -vv"
-  skip: True  # [win]
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
+  skip: true  # [win]
 
 requirements:
   build:
@@ -34,7 +34,7 @@ about:
   license: BSD-2-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'A screamingly fast Python 2/3 WSGI server written in C.'
+  summary: A screamingly fast Python 2/3 WSGI server written in C.
   description: |
     A screamingly fast, ultra-lightweight WSGI server for CPython 2 and CPython
     3, written in C using Marc Lehmann's high performance
