@@ -10,6 +10,8 @@ cxx_compiler_version:
 - '10'
 docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
+libev:
+- '4.33'
 pin_run_as_build:
   python:
     min_pin: x.x
