@@ -10,15 +10,17 @@ source:
   sha256: 16e5a02a9a17a7f5f8bea0d7c58650e78ab80ead6fe3e390037573d4355baf31
 
 build:
-  number: 2
+  number: 3
   script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [win]
 
 requirements:
   build:
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
   host:
     - python
+    - setuptools
     - pip
     - libev
   run:
